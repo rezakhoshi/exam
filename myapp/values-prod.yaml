@@ -1,0 +1,5 @@
+replicaCount: 3
+#image:
+#  repository: myregistry.com/myapp
+image: nginx:latest
+  tag: latest
