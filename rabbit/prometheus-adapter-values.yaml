@@ -1,0 +1,12 @@
+rules:
+  default: false
+  custom:
+    - seriesQuery: 'rabbitmq_queue_messages{namespace!="",queue!=""}'
+      resources:
+        overrides:
+          namespace: {resource: "namespace"}
+          queue: {resource: "pod"}
+      name:
+        matches: "rabbitmq_queue_messages"
+        as: "rabbitmq_queue_messages"
+      metricsQuery: 'sum(rabbitmq_queue_messages{<<.LabelMatchers>>}) by (<<.GroupBy>>)'
