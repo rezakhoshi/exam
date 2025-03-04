@@ -1,0 +1,4 @@
+replicaCount: 1
+image:
+  repository: 9369522928/myapp
+  tag: latest
